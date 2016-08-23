@@ -10,8 +10,7 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
-
-class AuthorizationController: UIViewController {
+class AuthorizationController: UIViewController, LoginButtonDelegate {
 
     let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
 
@@ -19,6 +18,7 @@ class AuthorizationController: UIViewController {
         super.viewDidLoad()
 
         loginButton.center = view.center
+        loginButton.delegate = self
         view.addSubview(loginButton)
         
     }
@@ -42,6 +42,20 @@ class AuthorizationController: UIViewController {
         
     }
     
+    
+    func loginButtonDidCompleteLogin(loginButton: LoginButton, result: LoginResult) {
+        
+        AppDelegate.shared().showLanding()
+        
+    }
+    
+    
+    func loginButtonDidLogOut(loginButton: LoginButton) {
+        
+        AppDelegate.shared().showAuthorization()
+        
+    }
+
 
 }
 

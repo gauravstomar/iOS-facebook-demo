@@ -7,17 +7,54 @@
 //
 
 import UIKit
-import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
     var window: UIWindow?
 
+    
+    static func shared() -> AppDelegate {
+
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+
+    }
+    
+    func showLanding() {
+
+        if let window = self.window {
+            
+            window.rootViewController = UIStoryboard.init(name: "Landing", bundle: nil).instantiateInitialViewController()
+            window.makeKeyAndVisible()
+            
+        }
+
+    }
+    
+    
+    func showAuthorization() {
+        
+        if let window = self.window {
+            
+            window.rootViewController = UIStoryboard.init(name: "Authorization", bundle: nil).instantiateInitialViewController()
+            window.makeKeyAndVisible()
+            
+        }
+        
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+
+            showLanding()
+            return true
+
+        }
         
         return true
     }
