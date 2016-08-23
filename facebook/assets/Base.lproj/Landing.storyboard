@@ -43,6 +43,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TT-Kt-Yia">
                                         <rect key="frame" x="280" y="60" width="280" height="30"/>
                                         <state key="normal" title="Picture"/>
+                                        <connections>
+                                            <action selector="logoutHack:" destination="9p3-76-UHl" eventType="touchUpInside" id="AdW-w8-7nB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

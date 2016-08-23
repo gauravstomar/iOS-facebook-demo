@@ -107,6 +107,11 @@ class LandingController: UIViewController {
 
     }
     
+    @IBAction func logoutHack(sender: AnyObject) {
+        
+        AppDelegate.shared().showAuthorization()
+        
+    }
     
     override func viewDidAppear(animated: Bool) {
 
