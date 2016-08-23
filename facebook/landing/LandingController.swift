@@ -21,9 +21,19 @@ class LandingController: UIViewController {
     @IBOutlet weak var userAge: UILabel!
     
     
+    let visualEffectViewLight = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+    let visualEffectViewDark = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        visualEffectViewLight.frame = view.bounds
+        view.addSubview(visualEffectViewLight)
+        
+        visualEffectViewDark.frame = profileImage.bounds
+        profileImage.addSubview(visualEffectViewDark)
         
         
         let graphDataRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "timezone, first_name, last_name, birthday, email"])
@@ -36,6 +46,12 @@ class LandingController: UIViewController {
                 print("Error: \(error)")
             
             } else {
+
+                UIView.animateWithDuration(0.5, animations: {
+                    self.visualEffectViewLight.alpha = 0
+                    }, completion: { (_) in
+                        self.visualEffectViewLight.removeFromSuperview()
+                })
 
                 self.firstName.text = result.valueForKey("first_name") as? String
                 self.lastName.text = result.valueForKey("last_name") as? String
@@ -58,7 +74,7 @@ class LandingController: UIViewController {
                     
                 }
                 
-
+                //Time zone calculation added
                 if let timezone = result.valueForKey("timezone") as? Double {
                     
                     self.userTimezone.text = "UTC (\(timezone)) - "
@@ -76,6 +92,11 @@ class LandingController: UIViewController {
                         let data = NSData(contentsOfURL: url)
                         dispatch_async(dispatch_get_main_queue(), {
                             self.profileImage.image = UIImage(data: data!)
+                            UIView.animateWithDuration(0.5, animations: {
+                                self.visualEffectViewDark.alpha = 0
+                                }, completion: { (_) in
+                                self.visualEffectViewDark.removeFromSuperview()
+                            })
                         });
                     }
                 }
@@ -84,10 +105,14 @@ class LandingController: UIViewController {
             
         })
 
-        
-        
-        
-        
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+
+        visualEffectViewLight.frame = view.bounds
+        visualEffectViewDark.frame = profileImage.bounds
+
     }
 
 
