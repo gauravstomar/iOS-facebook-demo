@@ -10,10 +10,24 @@ import UIKit
 
 class LandingController: UIViewController {
 
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userTimezone: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var lastName: UILabel!
+    @IBOutlet weak var userAge: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
+        
+        
+        
+        
     }
 
 

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
+    
     func showLanding() {
 
         if let window = self.window {
@@ -45,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -59,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
     func applicationWillResignActive(application: UIApplication) {
 
     }

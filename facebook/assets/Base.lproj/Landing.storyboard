@@ -217,6 +217,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="firstName" destination="Q1i-Eg-VhU" id="xvl-YK-VMY"/>
+                        <outlet property="lastName" destination="mMK-tZ-ciQ" id="wTK-KG-Z8T"/>
+                        <outlet property="profileImage" destination="mrR-tq-sQM" id="sze-6d-O8F"/>
+                        <outlet property="userAge" destination="XLm-ni-6Ir" id="tab-BU-ro3"/>
+                        <outlet property="userEmail" destination="3gm-SK-XIN" id="DQ2-Gk-Wz9"/>
+                        <outlet property="userTimezone" destination="Dac-e3-bAi" id="myL-fv-QIz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6F9-9M-FuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
