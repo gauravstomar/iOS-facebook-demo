@@ -12,13 +12,14 @@ import FacebookLogin
 
 class AuthorizationController: UIViewController, LoginButtonDelegate {
 
-    let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
+    let loginButton = LoginButton(readPermissions: [ .PublicProfile, .Custom("user_birthday"), .Custom("email") ])
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loginButton.center = view.center
         loginButton.delegate = self
+        
         view.addSubview(loginButton)
         
     }

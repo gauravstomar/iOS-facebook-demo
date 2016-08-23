@@ -25,8 +25,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhj-ve-dSj">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="150"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sampl" translatesAutoresizingMaskIntoConstraints="NO" id="mrR-tq-sQM">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample" translatesAutoresizingMaskIntoConstraints="NO" id="mrR-tq-sQM">
                                                 <rect key="frame" x="65" y="0.0" width="150" height="150"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mrR-tq-sQM" secondAttribute="height" multiplier="1:1" id="nPJ-6y-Sie"/>
                                                 </constraints>
@@ -51,7 +52,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6w-An-mZK">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="102.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myman@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-SK-XIN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myman@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-SK-XIN">
                                                 <rect key="frame" x="8" y="41" width="362.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -232,6 +233,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sampl" width="170" height="170"/>
+        <image name="Sample" width="184" height="168"/>
     </resources>
 </document>
